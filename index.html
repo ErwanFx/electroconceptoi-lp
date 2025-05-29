@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Électro Concept OI - Panneaux Solaires Premium La Réunion</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #00C16A;
+            --primary-hover: #00A35A;
+            --secondary-yellow: #F9B949;
+            --background-white: #FFFFFF;
+            --text-dark: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --cta-orange: #FF6B35;
+            --cta-hover: #E85A24;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Smooth scroll for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Header and Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-color: var(--background-white);
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-heading {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subheading {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            line-height: 1.4;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            background-color: var(--cta-orange);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            animation: pulse 2s infinite;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            }
+        }
+        
+        .micro-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Animated illustration */
+        .solar-animation {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+        }
+        
+        .house-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            animation: houseFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes houseFloat {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .house {
+            position: absolute;
+            width: 200px;
+            height: 180px;
+            background-color: #f5f5f5;
+            clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%);
+            z-index: 1;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .roof {
+            position: absolute;
+            width: 220px;
+            height: 100px;
+            background-color: #e0e0e0;
+            clip-path: polygon(0 70%, 50% 0, 100% 70%);
+            z-index: 2;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .solar-panels {
+            position: absolute;
+            width: 160px;
+            height: 70px;
+            background: linear-gradient(135deg, #2886d1 0%, #1a5fa0 100%);
+            z-index: 3;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-20deg);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 5px;
+            padding: 5px;
+        }
+        
+        .panel {
+            background-color: #1a4978;
+            border-radius: 2px;
+        }
+        
+        .sun {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            top: 30px;
+            right: 80px;
+            box-shadow: 0 0 30px #FFD700;
+            animation: sunMove 10s linear infinite, sunGlow 3s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes sunMove {
+            0% {
+                transform: translate(-100px, 100px);
+                opacity: 0.7;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            50% {
+                transform: translate(0, -20px);
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(100px, 100px);
+                opacity: 0.7;
+            }
+        }
+        
+        @keyframes sunGlow {
+            0% {
+                box-shadow: 0 0 30px #FFD700;
+            }
+            50% {
+                box-shadow: 0 0 50px #FFD700;
+            }
+            100% {
+                box-shadow: 0 0 30px #FFD700;
+            }
+        }
+        
+        .rays {
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            z-index: 1;
+            opacity: 0.7;
+            animation: raysOpacity 8s ease-in-out infinite;
+        }
+        
+        @keyframes raysOpacity {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+        
+        .ray {
+            position: absolute;
+            height: 100px;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0));
+            transform-origin: top center;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: particleFloat 10s infinite linear;
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(var(--end-x), var(--end-y)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            transition: all 0.5s ease;
+        }
+        
+        .stat-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        /* How it works section */
+        .howworks-section {
+            padding: 5rem 0;
+        }
+        
+        .step-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-green);
+            opacity: 0.8;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 193, 106, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-icon i {
+            font-size: 2rem;
+            color: var(--primary-green);
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .step-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-green);
+            border-radius: 3px;
+            width: 0;
+            transition: width 2s ease;
+        }
+        
+        /* Benefits section */
+        .benefits-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+        
+        .comparison-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .comparison-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            width: 120px;
+        }
+        
+        .comparison-bar-container {
+            flex: 1;
+            height: 30px;
+            background-color: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .comparison-bar {
+            height: 100%;
+            border-radius: 15px;
+            transition: width 2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .comparison-bar.before {
+            background-color: #ff6b6b;
+            width: 0;
+        }
+        
+        .comparison-bar.after {
+            background-color: var(--primary-green);
+            width: 0;
+        }
+        
+        .savings-highlight {
+            background-color: rgba(0, 193, 106, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .savings-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .savings-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        
+        /* Financial aids section */
+        .aids-section {
+            padding: 5rem 0;
+        }
+        
+        .aid-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+        }
+        
+        .aid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .aid-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--secondary-yellow);
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+        
+        .aid-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .aid-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .aid-detail {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Testimonials section */
+        .testimonials-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            color: rgba(0, 193, 106, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* FAQ section */
+        .faq-section {
+            padding: 5rem 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-green);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-answer-content {
+            padding-bottom: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9ecef;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Calculator */
+        .calculator {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .calculator-input {
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .calculator-slider-container {
+            width: 100%;
+            position: relative;
+        }
+        
+        .calculator-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e9ecef;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .calculator-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .calculator-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
+        }
+        
+        .calculator-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        
+        .calculator-results {
+            background-color: rgba(0, 193, 106, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+        
+        .calculator-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-result-label {
+            font-weight: 500;
+        }
+        
+        .calculator-result-value {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+        }
+        
+        /* Urgency elements */
+        .urgency-container {
+            background-color: rgba(249, 185, 73, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .urgency-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .urgency-icon {
+            color: var(--secondary-yellow);
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .urgency-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .timer {
+            color: var(--cta-orange);
+            font-weight: 700;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transform: translateX(calc(100% + 20px));
+            opacity: 0;
+            transition: all 0.5s ease;
+            max-width: 300px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 193, 106, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .notification-icon i {
+            color: var(--primary-green);
+        }
+        
+        .notification-content {
+            flex-grow: 1;
+        }
+        
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .notification-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 80px;
+                text-align: center;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .header.scrolled .logo img {
+                height: 30px;
+            }
+            
+            .solar-animation {
+                height: 300px;
+            }
+            
+            .house-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .house {
+                width: 180px;
+                height: 160px;
+            }
+            
+            .roof {
+                width: 200px;
+                height: 90px;
+            }
+            
+            .solar-panels {
+                width: 140px;
+                height: 60px;
+            }
+            
+            .sun {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .urgency-container {
+                flex-direction: column;
+            }
+            
+            .urgency-item {
+                margin-bottom: 0.5rem;
+            }
+            
+            .urgency-item:last-child {
+                margin-bottom: 0;
+            }
+            
+            .cta-button {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-heading {
+                font-size: 2rem;
+            }
+            
+            .hero-subheading {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-title {
+                font-size: 0.9rem;
+            }
+            
+            .step-title {
+                font-size: 1.3rem;
+            }
+            
+            .aid-title {
+                font-size: 1.1rem;
+            }
+            
+            .aid-amount {
+                font-size: 1.5rem;
+            }
+            
+            .comparison-label {
+                width: 90px;
+                font-size: 0.9rem;
+            }
+            
+            .savings-text {
+                font-size: 1rem;
+            }
+            
+            .savings-amount {
+                font-size: 1.3rem;
+            }
+            
+            .notification {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo">
+                <img src="https://i.goopics.net/5q09wa.png" alt="Electro Concept OI">
+            </div>
+            <nav class="hidden md:flex">
+                <a href="#how-it-works" class="nav-link mx-4">Comment ça marche</a>
+                <a href="#benefits" class="nav-link mx-4">Avantages</a>
+                <a href="#aids" class="nav-link mx-4">Aides</a>
+                <a href="#testimonials" class="nav-link mx-4">Témoignages</a>
+                <a href="#faq" class="nav-link mx-4">FAQ</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden bg-white px-4 py-3 shadow-md md:hidden">
+            <a href="#how-it-works" class="block py-2 nav-link">Comment ça marche</a>
+            <a href="#benefits" class="block py-2 nav-link">Avantages</a>
+            <a href="#aids" class="block py-2 nav-link">Aides</a>
+            <a href="#testimonials" class="block py-2 nav-link">Témoignages</a>
+            <a href="#faq" class="block py-2 nav-link">FAQ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-1/2">
+                <div class="urgency-container">
+                    <div class="urgency-item">
+                        <span class="urgency-icon"><i class="fas fa-clock"></i></span>
+                        <span class="urgency-text">Offre valable encore <span id="countdown-timer" class="timer">23h 45min</span></span>
+                    </div>
+                    <div class="urgency-item">
+                        <span class="urgency-icon"><i class="fas fa-user-check"></i></span>
+                        <span class="urgency-text">Plus que <span class="timer">12</span> études gratuites cette semaine</span>
+                    </div>
+                </div>
+                
+                <h1 class="hero-heading">Transformez votre énergie. Réduisez votre facture.</h1>
+                <p class="hero-subheading">Jusqu'à 70% d'économies sur votre facture EDF à La Réunion</p>
+                <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE DÉCOUVRE MES ÉCONOMIES EN 2 MIN</a>
+                <p class="micro-text">Sans engagement. Étude personnalisée gratuite (valeur 494€)</p>
+                <div class="mt-8">
+                    <p class="font-semibold">Expert solaire réunionnais depuis 2011</p>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="solar-animation">
+                    <div class="house-container">
+                        <div class="house"></div>
+                        <div class="roof"></div>
+                        <div class="solar-panels">
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                            <div class="panel"></div>
+                        </div>
+                        <div class="sun"></div>
+                        <div class="rays" id="rays"></div>
+                        <div class="particles" id="particles"></div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <div>
+                            <span class="font-bold text-xl">Énergie produite aujourd'hui:</span>
+                            <span id="energy-counter" class="font-bold text-2xl text-green-500 ml-2">0</span>
+                            <span class="font-bold text-xl">kWh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                    <div class="stat-card">
+                        <div class="stat-number">RGE & QualiPV</div>
+                        <div class="stat-title">Entreprise Certifiée</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="installations-counter">0</div>
+                        <div class="stat-title">Installations réalisées</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="energy-generated-counter">0</div>
+                        <div class="stat-title">MWh d'énergie propre générée</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="savings-counter">0</div>
+                        <div class="stat-title">€ d'économies générées</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section id="how-it-works" class="howworks-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Comment ça marche</h2>
+            <p class="text-center text-gray-600 mb-12">3 étapes simples vers vos économies d'énergie</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="step-title">Testez votre éligibilité</h3>
+                        <p class="step-text">Répondez à notre quiz personnalisé en 2 minutes seulement</p>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="step-title">Découvrez votre potentiel</h3>
+                        <p class="step-text">Recevez instantanément votre estimation d'économies personnalisée</p>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="step-title">Obtenez votre étude gratuite</h3>
+                        <p class="step-text">Bénéficiez d'une étude personnalisée complète sans engagement</p>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE DÉCOUVRE MES ÉCONOMIES EN 2 MIN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Calculez vos économies</h2>
+            <p class="text-center text-gray-600 mb-12">Estimez rapidement votre potentiel d'économies</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="calculator">
+                    <h3 class="calculator-title">Ma facture EDF mensuelle actuelle</h3>
+                    <div class="calculator-input">
+                        <div class="calculator-slider-container">
+                            <input type="range" min="100" max="500" value="280" class="calculator-slider" id="bill-slider">
+                        </div>
+                        <div class="calculator-value"><span id="bill-value">280</span>€ / mois</div>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <div class="calculator-result-item">
+                            <div class="calculator-result-label">Économies mensuelles estimées</div>
+                            <div class="calculator-result-value"><span id="monthly-savings">195</span>€</div>
+                        </div>
+                        <div class="calculator-result-item">
+                            <div class="calculator-result-label">Économies annuelles</div>
+                            <div class="calculator-result-value"><span id="yearly-savings">2 340</span>€</div>
+                        </div>
+                        <div class="calculator-result-item">
+                            <div class="calculator-result-label">Économies sur 10 ans</div>
+                            <div class="calculator-result-value"><span id="decade-savings">23 400</span>€</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">OBTENIR MON ÉTUDE PERSONNALISÉE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Avantages chiffrés</h2>
+            <p class="text-center text-gray-600 mb-12">Des économies concrètes et durables</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="comparison-card">
+                    <div class="comparison-item">
+                        <div class="comparison-label">Avant</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar before" data-width="100">280€</div>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Après</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar after" data-width="30">85€</div>
+                        </div>
+                    </div>
+                    
+                    <div class="savings-highlight">
+                        <div class="savings-text">Économies réelles</div>
+                        <div class="savings-amount">195€/mois soit 2 340€/an</div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE VÉRIFIE MON ÉLIGIBILITÉ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Aids Section -->
+    <section id="aids" class="aids-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Aides financières 2025</h2>
+            <p class="text-center text-gray-600 mb-12">Des subventions pour faciliter votre transition énergétique</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="aid-card">
+                        <div class="aid-badge">VÉRIFIÉ 2025</div>
+                        <h3 class="aid-title">KAP Photovoltaïque (Région + UE)</h3>
+                        <div class="aid-amount">Jusqu'à 6 000€</div>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Avec batteries: jusqu'à 6 000€</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Sans stockage: jusqu'à 3 000€</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Puissance 0,3 à 9 kWc</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="aid-card">
+                        <div class="aid-badge">VÉRIFIÉ 2025</div>
+                        <h3 class="aid-title">Prime EDF</h3>
+                        <div class="aid-amount">Jusqu'à 9 000€</div>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> En versement différé</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Pour autoconsommation avec vente de surplus</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Convention de rachat obligatoire</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="aid-card">
+                        <div class="aid-badge">VÉRIFIÉ 2025</div>
+                        <h3 class="aid-title">TVA réduite</h3>
+                        <div class="aid-amount">5,5% à 10%</div>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> 10% pour installations ≤ 3 kWc</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> 5,5% dès octobre 2025 (≤ 9 kWc + stockage)</p>
+                        <p class="aid-detail"><i class="fas fa-check text-green-500 mr-2"></i> Économies importantes sur l'investissement</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">VÉRIFIER MON ÉLIGIBILITÉ AUX AIDES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Témoignages clients</h2>
+            <p class="text-center text-gray-600 mb-12">Ce que disent nos clients réunionnais</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">À Saint-Paul, j'ai divisé ma facture par trois dès le 1er mois. Les démarches pour les aides ont été gérées à 100% par Electro Concept.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Michel D.</div>
+                                <div class="testimonial-location">Saint-Paul</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Installation impeccable et très professionnelle. Ma facture EDF est passée de 310€ à 95€ par mois. Un investissement qui vaut vraiment le coup !</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Sophie M.</div>
+                                <div class="testimonial-location">Saint-Denis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Équipe réactive et compétente. L'installation a résisté au dernier cyclone sans aucun problème. Je recommande vivement leurs services.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Jean-Luc R.</div>
+                                <div class="testimonial-location">Saint-Pierre</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE DÉCOUVRE MES ÉCONOMIES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Questions fréquentes</h2>
+            <p class="text-center text-gray-600 mb-12">Tout ce que vous devez savoir sur les panneaux solaires à La Réunion</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item" data-faq="1">
+                    <div class="faq-question">
+                        <span>Combien coûte une installation solaire à La Réunion ?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Le coût d'une installation solaire à La Réunion varie généralement entre 8 000€ et 25 000€ selon la taille et le type d'installation (avec ou sans batterie). Cependant, grâce aux aides financières (KAP Photovoltaïque, Prime EDF, TVA réduite), le coût final peut être réduit considérablement. Notre étude personnalisée gratuite vous donnera un prix précis adapté à votre situation.
+                            <div class="mt-3">
+                                <a href="https://electroconcept.perspectivefunnel.com/" class="text-green-600 hover:text-green-800 font-semibold">Je veux connaître mon prix personnalisé →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="2">
+                    <div class="faq-question">
+                        <span>Quelles aides puis-je obtenir et comment ?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            En 2025, vous pouvez bénéficier de plusieurs aides à La Réunion :
+                            <ul class="list-disc pl-5 mt-2">
+                                <li>KAP Photovoltaïque (Région + UE) : jusqu'à 6 000€ avec batteries, 3 000€ sans stockage</li>
+                                <li>Prime EDF : jusqu'à 9 000€ en versement différé</li>
+                                <li>TVA réduite : 10% (5,5% dès octobre 2025 pour certaines installations)</li>
+                            </ul>
+                            Notre équipe s'occupe de toutes les démarches administratives pour vous simplifier l'accès à ces aides.
+                            <div class="mt-3">
+                                <a href="https://electroconcept.perspectivefunnel.com/" class="text-green-600 hover:text-green-800 font-semibold">Vérifier mon éligibilité aux aides →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="3">
+                    <div class="faq-question">
+                        <span>Combien de temps dure l'installation ?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            La durée d'installation varie selon la taille et la complexité du projet. Généralement, l'installation des panneaux solaires prend entre 1 et 3 jours pour une maison individuelle standard. Nous organisons notre intervention pour minimiser les désagréments et garantir une mise en service rapide de votre système.
+                            <div class="mt-3">
+                                <a href="https://electroconcept.perspectivefunnel.com/" class="text-green-600 hover:text-green-800 font-semibold">Planifier mon projet →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="4">
+                    <div class="faq-question">
+                        <span>Que se passe-t-il en cas de cyclone ?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Nos installations sont conçues spécifiquement pour résister aux conditions climatiques de La Réunion, y compris les cyclones. Nous utilisons des systèmes de fixation renforcés et des matériaux certifiés pour résister à des vents de plus de 250 km/h (classe cyclonique 4). Nos panneaux sont garantis 25 ans et l'installation est couverte par notre assurance décennale.
+                            <div class="mt-3">
+                                <a href="https://electroconcept.perspectivefunnel.com/" class="text-green-600 hover:text-green-800 font-semibold">En savoir plus sur nos garanties →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq="5">
+                    <div class="faq-question">
+                        <span>Les panneaux fonctionnent-ils quand il pleut ?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui, les panneaux solaires fonctionnent même par temps nuageux ou pluvieux, bien que leur rendement soit réduit. À La Réunion, l'ensoleillement exceptionnel compense largement les jours de pluie. Pour maintenir une production constante, nous proposons des solutions avec batterie qui stockent l'énergie produite pendant les journées ensoleillées pour l'utiliser lors des périodes moins favorables.
+                            <div class="mt-3">
+                                <a href="https://electroconcept.perspectivefunnel.com/" class="text-green-600 hover:text-green-800 font-semibold">Découvrir nos solutions de stockage →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE DÉCOUVRE MES ÉCONOMIES EN 2 MIN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="footer-logo">
+                        <img src="https://i.goopics.net/5q09wa.png" alt="Electro Concept OI">
+                    </div>
+                    <div class="footer-info">
+                        <p class="mb-3">45 Rue Ruisseau des Noirs, 97400 Saint-Denis, La Réunion</p>
+                        <p class="mb-3">Tél : 0693 53 20 25</p>
+                        <p class="mb-3">Email : contact@electroconceptoi.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/electroconceptoi" class="social-link" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/electro_concept_oi/" class="social-link" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Certifications</h4>
+                    <p class="mb-3">Entreprise RGE Qualipv</p>
+                    <p class="mb-3">Installateur agréé photovoltaïque</p>
+                    <p class="mb-3">Garantie décennale</p>
+                    <div class="mt-6">
+                        <a href="https://electroconcept.perspectivefunnel.com/" class="cta-button">JE DÉCOUVRE MES ÉCONOMIES</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Electro Concept OI - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification popup -->
+    <div class="notification" id="notification">
+        <div class="notification-icon">
+            <i class="fas fa-user-check"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-title" id="notification-title">Marie vient de tester son éligibilité</div>
+            <div class="notification-text" id="notification-text">Saint-Denis, il y a 2 minutes</div>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Solar animation rays
+        function createRays() {
+            const raysContainer = document.getElementById('rays');
+            const numberOfRays = 8;
+            
+            for (let i = 0; i < numberOfRays; i++) {
+                const ray = document.createElement('div');
+                ray.className = 'ray';
+                const angle = (i * 360 / numberOfRays);
+                ray.style.transform = `rotate(${angle}deg)`;
+                raysContainer.appendChild(ray);
+            }
+        }
+        
+        // Particles animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 20;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                particle.style.left = `${x}%`;
+                particle.style.top = `${y}%`;
+                
+                // Random size
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random animation duration and delay
+                const duration = 5 + Math.random() * 10;
+                const delay = Math.random() * 5;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                // Random end position for animation
+                const endX = -50 + Math.random() * 100;
+                const endY = -50 + Math.random() * 100;
+                particle.style.setProperty('--end-x', `${endX}px`);
+                particle.style.setProperty('--end-y', `${endY}px`);
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Counter animation
+        function animateCounters() {
+            // Energy counter
+            let energyStart = 0;
+            const energyTarget = Math.floor(Math.random() * 5) + 8; // Random between 8-12
+            const energyDuration = 3000;
+            const energyElement = document.getElementById('energy-counter');
+            const energyStartTime = Date.now();
+            
+            function updateEnergyCounter() {
+                const now = Date.now();
+                const progress = Math.min((now - energyStartTime) / energyDuration, 1);
+                const currentValue = Math.floor(progress * energyTarget);
+                
+                if (currentValue !== energyStart) {
+                    energyStart = currentValue;
+                    energyElement.textContent = currentValue;
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateEnergyCounter);
+                }
+            }
+            
+            // Stats counters
+            const counters = [
+                {
+                    id: 'installations-counter',
+                    start: 0,
+                    target: 100,
+                    prefix: '',
+                    suffix: '+'
+                },
+                {
+                    id: 'energy-generated-counter',
+                    start: 0,
+                    target: 120,
+                    prefix: '',
+                    suffix: ''
+                },
+                {
+                    id: 'savings-counter',
+                    start: 0,
+                    target: 85000,
+                    prefix: '',
+                    suffix: ''
+                }
+            ];
+            
+            function startCounters() {
+                const countDuration = 2000;
+                const startTime = Date.now();
+                
+                function updateCounters() {
+                    const now = Date.now();
+                    const progress = Math.min((now - startTime) / countDuration, 1);
+                    
+                    counters.forEach(counter => {
+                        const currentValue = Math.floor(progress * counter.target);
+                        const element = document.getElementById(counter.id);
+                        
+                        if (element) {
+                            if (counter.id === 'savings-counter') {
+                                element.textContent = counter.prefix + currentValue.toLocaleString('fr-FR') + counter.suffix;
+                            } else {
+                                element.textContent = counter.prefix + currentValue + counter.suffix;
+                            }
+                        }
+                    });
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounters);
+                    }
+                }
+                
+                updateCounters();
+            }
+            
+            // Start counters when they come into view
+            const statsSection = document.getElementById('stats');
+            
+            function checkStatsSectionVisibility() {
+                const rect = statsSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                
+                if (rect.top <= windowHeight * 0.75 && rect.bottom >= 0) {
+                    startCounters();
+                    window.removeEventListener('scroll', checkStatsSectionVisibility);
+                }
+            }
+            
+            window.addEventListener('scroll', checkStatsSectionVisibility);
+            checkStatsSectionVisibility(); // Check on load as well
+            updateEnergyCounter();
+        }
+        
+        // Progress bars animation
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress');
+            
+            function checkProgressBarsVisibility() {
+                progressBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                    
+                    if (rect.top <= windowHeight * 0.75 && rect.bottom >= 0) {
+                        const width = bar.getAttribute('data-width') || 100;
+                        bar.style.width = `${width}%`;
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkProgressBarsVisibility);
+            checkProgressBarsVisibility(); // Check on load as well
+        }
+        
+        // Comparison bars animation
+        function animateComparisonBars() {
+            const comparisonBars = {
+                before: document.querySelector('.comparison-bar.before'),
+                after: document.querySelector('.comparison-bar.after')
+            };
+            
+            function checkComparisonBarsVisibility() {
+                const rect = document.querySelector('.comparison-card').getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                
+                if (rect.top <= windowHeight * 0.75 && rect.bottom >= 0) {
+                    const beforeWidth = comparisonBars.before.getAttribute('data-width') || 100;
+                    const afterWidth = comparisonBars.after.getAttribute('data-width') || 30;
+                    
+                    comparisonBars.before.style.width = `${beforeWidth}%`;
+                    comparisonBars.after.style.width = `${afterWidth}%`;
+                    
+                    window.removeEventListener('scroll', checkComparisonBarsVisibility);
+                }
+            }
+            
+            window.addEventListener('scroll', checkComparisonBarsVisibility);
+            checkComparisonBarsVisibility(); // Check on load as well
+        }
+        
+        // Calculator functionality
+        function initializeCalculator() {
+            const billSlider = document.getElementById('bill-slider');
+            const billValue = document.getElementById('bill-value');
+            const monthlySavings = document.getElementById('monthly-savings');
+            const yearlySavings = document.getElementById('yearly-savings');
+            const decadeSavings = document.getElementById('decade-savings');
+            
+            function updateCalculator() {
+                const currentBill = parseInt(billSlider.value);
+                billValue.textContent = currentBill;
+                
+                // Calculate savings (approximately 70% of current bill)
+                const savings = Math.round(currentBill * 0.7);
+                monthlySavings.textContent = savings;
+                yearlySavings.textContent = (savings * 12).toLocaleString('fr-FR');
+                decadeSavings.textContent = (savings * 12 * 10).toLocaleString('fr-FR');
+            }
+            
+            billSlider.addEventListener('input', updateCalculator);
+            updateCalculator(); // Initialize with default values
+        }
+        
+        // FAQ functionality
+        function initializeFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    faqItems.forEach(fItem => {
+                        fItem.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Countdown timer functionality
+        function initializeCountdown() {
+            const countdownElement = document.getElementById('countdown-timer');
+            let hours = 23;
+            let minutes = 45;
+            
+            function updateCountdown() {
+                countdownElement.textContent = `${hours}h ${minutes}min`;
+                
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        hours = 23;
+                    }
+                }
+                
+                setTimeout(updateCountdown, 60000); // Update every minute
+            }
+            
+            updateCountdown();
+        }
+        
+        // Notification functionality
+        function initializeNotifications() {
+            const notification = document.getElementById('notification');
+            const notificationTitle = document.getElementById('notification-title');
+            const notificationText = document.getElementById('notification-text');
+            
+            const notifications = [
+                {
+                    title: "Marie vient de tester son éligibilité",
+                    text: "Saint-Denis, il y a 2 minutes"
+                },
+                {
+                    title: "Paul vient de terminer son quiz",
+                    text: "Saint-Pierre, il y a 5 minutes"
+                },
+                {
+                    title: "Installation terminée chez Sophie",
+                    text: "Saint-Leu, aujourd'hui"
+                },
+                {
+                    title: "Lucas vient de recevoir son étude",
+                    text: "Saint-Paul, il y a 15 minutes"
+                }
+            ];
+            
+            let notificationIndex = 0;
+            
+            function showNotification() {
+                const currentNotification = notifications[notificationIndex];
+                
+                notificationTitle.textContent = currentNotification.title;
+                notificationText.textContent = currentNotification.text;
+                
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    
+                    notificationIndex = (notificationIndex + 1) % notifications.length;
+                    
+                    setTimeout(showNotification, 5000); // Wait 5s before showing the next notification
+                }, 7000); // Show for 7s
+            }
+            
+            // Start notifications after a delay
+            setTimeout(showNotification, 3000);
+        }
+        
+        // Initialize all functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createRays();
+            createParticles();
+            animateCounters();
+            animateProgressBars();
+            animateComparisonBars();
+            initializeCalculator();
+            initializeFAQ();
+            initializeCountdown();
+            initializeNotifications();
+        });
+    </script>
+</body>
+</html>
